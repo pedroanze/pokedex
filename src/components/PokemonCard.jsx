@@ -20,7 +20,7 @@ const PokemonCard = ({ name, url, onClick }) => {
 
   return (
     <div
-      className="flex flex-row items-center rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer overflow-hidden"
+      className="flex flex-row items-center rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer overflow-hidden hover:transition-transform hover:duration-300"
       onClick={() => onClick(pokemonDetails)}
       style={{
         backgroundColor: pokemonDetails
@@ -28,28 +28,9 @@ const PokemonCard = ({ name, url, onClick }) => {
           : "#ddd",
       }}
     >
-      {/* Sección de imagen */}
-      <div
-        className="flex justify-center items-center w-1/3 p-4"
-        style={{
-          backgroundColor: pokemonDetails
-            ? typeColors[pokemonDetails.types[0].type.name]
-            : "#ddd",
-        }}
-      >
-        {pokemonDetails ? (
-          <img
-            src={pokemonDetails.sprites.front_default}
-            alt={name}
-            className="w-24 h-24 lg:w-32 lg:h-32 object-contain"
-          />
-        ) : (
-          <p className="text-white">Cargando...</p>
-        )}
-      </div>
+      {/* Sección de datos */}
 
-      {/* Sección de contenido */}
-      <div className="flex flex-col w-2/3 bg-white p-4">
+      <div className="flex flex-col w-2/5 bg-white p-4 z-10 rounded-r-lg rounded-b-lg">
         {/* Nombre */}
         <h2 className="text-lg lg:text-xl font-bold capitalize text-gray-800">
           {name}
@@ -95,6 +76,31 @@ const PokemonCard = ({ name, url, onClick }) => {
             ))}
         </div>
       </div>
+
+      {/* Sección de imagen */}
+      <div
+  className="flex justify-center items-center w-3/5 p-4"
+  style={{
+    backgroundColor: pokemonDetails
+      ? typeColors[pokemonDetails.types[0].type.name]
+      : "#ddd",
+  }}
+>
+  {pokemonDetails ? (
+    <img
+      src={
+        pokemonDetails.sprites.other["official-artwork"].front_default ||
+        pokemonDetails.sprites.other.dream_world.front_default ||
+        pokemonDetails.sprites.front_default
+      }
+      alt={name}
+      className="h-[90%] w-auto object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+    />
+  ) : (
+    <p className="text-white">Cargando...</p>
+  )}
+</div>
+
     </div>
   );
 };
