@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Pikachu from "../assets/pikachu.png"; // Imagen Pikachu
+import Pokebola from "../assets/pokebolas.png"; // Imagen Pokebolas
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -12,12 +13,19 @@ const Hero = () => {
 
       {/* Contenido principal */}
       <div className="flex flex-1 flex-col lg:flex-row items-center justify-center gap-8 mt-12 w-full px-4">
-        {/* Imagen Pokémon */}
+        {/* Contenedor de imágenes */}
         <div className="relative flex justify-center items-center lg:w-1/2">
+          {/* Imagen de Pikachu */}
           <img
-            className="w-[100%] object-contain animate-scale-up"
+            className="w-[100%] object-contain"
             src={Pikachu}
             alt="Pikachu"
+          />
+          {/* Imagen de Pokebolas con efecto de levitación */}
+          <img
+            className="absolute w-[100%] object-contain animate-levitate"
+            src={Pokebola}
+            alt="Pokebolas"
           />
         </div>
 
@@ -36,7 +44,10 @@ const Hero = () => {
             Ver Pokémon
           </button>
           <div className="text-black text-lg font-bold font-['Roboto']">
-            Creado con ❤️ por  <a className="" href="https://beacons.ai/pedroanze">@pedroanze</a>
+            Creado con ❤️ por{" "}
+            <a className="" href="https://beacons.ai/pedroanze">
+              @pedroanze
+            </a>
           </div>
         </div>
       </div>

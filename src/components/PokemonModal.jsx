@@ -132,9 +132,9 @@ const PokemonModal = ({ pokemon, onClose }) => {
                   return (
                     <div
                       key={index}
-                      className="flex flex-col items-center gap-1 text-center mt-2"
+                      className="flex flex-col items-center gap-1 text-center mt-2 transition-transform transform hover:scale-110"
                     >
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 border-2 border-gray-800 rounded-full flex justify-center items-center">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 border-2 border-gray-800 rounded-full flex justify-center items-center transition-all">
                         <span className="text-sm lg:text-base font-bold text-gray-800">
                           {statValue}
                         </span>

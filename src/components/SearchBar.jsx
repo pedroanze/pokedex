@@ -7,7 +7,7 @@ const SearchBar = ({ search, setSearch }) => {
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       placeholder="Busca un Pokémon por su nombre o número..."
-      className="w-full px-4 py-2 rounded-lg border border-gray-300 shadow-md text-gray-800"
+      className="w-full px-4 py-4 rounded-lg border border-gray-300 shadow-md text-gray-800"
     />
   );
 };

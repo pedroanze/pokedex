@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import Logo from "../assets/logo.png"; // Asegúrate de que este archivo exista en la ruta indicada
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,13 +13,13 @@ const Navbar = () => {
     <header className="bg-[#f5db13] top-0 start-0 w-full fixed z-40 shadow-md">
       <nav className="flex flex-wrap justify-between items-center py-3 lg:py-6 px-6 md:px-10">
         {/* Logo e ícono izquierdo */}
-        <div className="h-12 flex items-center space-x-2">
+        <a className="h-12 flex items-center space-x-2" href="/">
           <img
             src={Logo}
             alt="Pokédex Logo"
             className="h-full w-auto object-contain"
           />
-        </div>
+        </a>
 
         {/* Botón de menú para móvil */}
         <div
@@ -41,7 +41,7 @@ const Navbar = () => {
             {/* Enlace 1 */}
             <li>
               <a
-                href="/"
+                href="/pokedex "
                 className="px-5 lg:py-3 py-2 rounded-lg shadow-sm inline-flex justify-center items-center text-center transition duration-500 hover:scale-110"
                 style={{ backgroundColor: "#72d576" }}
               >
@@ -51,7 +51,7 @@ const Navbar = () => {
             {/* Enlace 2 */}
             <li>
               <a
-                href="/pokedex"
+                href="https://github.com/pedroanze/pokedex"
                 className="px-5 lg:py-3 py-2 rounded-lg shadow-sm inline-flex justify-center items-center text-center transition duration-500 hover:scale-110"
                 style={{ backgroundColor: "#f2b807" }}
               >
